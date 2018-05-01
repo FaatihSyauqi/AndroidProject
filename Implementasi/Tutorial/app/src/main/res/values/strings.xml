@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Aplikasi Pariwisata</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Cari</string>
+    <string name="action_back">Kembali</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
