@@ -31,6 +31,7 @@ public class SlidingTabLayout extends HorizontalScrollView {
          */
         int getIndicatorColor(int position);
 
+        int getDividerColor(int i);
     }
 
     private static final int TITLE_OFFSET_DIPS = 24;
