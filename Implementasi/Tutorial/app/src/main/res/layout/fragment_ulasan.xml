@@ -24,9 +24,11 @@
             android:text="Nama :" />
 
         <EditText
+            android:id="@+id/nama_rat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Katika Sari" />
+            android:hint="Masukkan nama anda"
+            android:text="" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,10 +37,12 @@
             android:layout_marginTop="10dp"/>
 
         <EditText
+            android:id="@+id/ulasan_rat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ini ulasan tempatnya"
-            android:freezesText="true"/>
+            android:hint="Masukkan ulasan tempat"
+            android:freezesText="true"
+            android:text="" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,11 +56,12 @@
             android:layout_height="wrap_content"/>
 
         <Button
+            android:id="@+id/ulasan_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:text="Tambah Ulasan"
-            android:layout_marginRight="20dp"/>
+            android:layout_marginRight="20dp"
+            android:text="Tambah Ulasan" />
 
 
     </LinearLayout>
