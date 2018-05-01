@@ -24,11 +24,11 @@
             android:text="Alamat :" />
 
         <EditText
-            android:id="@+id/alamat_input"
+            android:id="@+id/alamat_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:freezesText="true"
-            android:hint="Masukkan alamat tempatnya" />
+            android:hint="Disini alamat tempatnya" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,24 +37,39 @@
             android:layout_marginTop="20dp"/>
 
         <EditText
-            android:id="@+id/website_input"
+            android:id="@+id/website_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:freezesText="true"
-            android:hint="Masukkan alamat website" />
+            android:hint="Disini alamat website" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Jam Operasional :"
+            android:text="No Telefon :"
             android:layout_marginTop="20dp"/>
 
         <EditText
-            android:id="@+id/jam_op_input"
+            android:id="@+id/telefon_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:freezesText="true"
-            android:hint="Masukkan jam operasionalnya" />
-        </LinearLayout>
+            android:hint="Disini no telefonnya" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Jam Operasional :" />
+
+        <EditText
+                android:id="@+id/jam_op_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:freezesText="true"
+                android:hint="Disini jam operasionalnya" />
+    </LinearLayout>
+
+</LinearLayout>
 
 </RelativeLayout>
