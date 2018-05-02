@@ -134,7 +134,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
-            foto = (ImageView)itemView.findViewById(R.id.bapa);
+            foto = (ImageView)itemView.findViewById(R.id.imageView);
 
         }
     }

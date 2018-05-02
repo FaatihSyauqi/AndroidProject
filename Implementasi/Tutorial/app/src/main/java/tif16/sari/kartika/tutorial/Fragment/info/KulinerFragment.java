@@ -1,4 +1,4 @@
-package tif16.sari.kartika.tutorial.Fragment;
+package tif16.sari.kartika.tutorial.Fragment.info;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,8 +10,8 @@ import android.view.ViewGroup;
 
 import tif16.sari.kartika.tutorial.R;
 
-public class UlasanFragment extends Fragment {
-    public UlasanFragment() {
+public class KulinerFragment extends Fragment {
+    public KulinerFragment() {
         // Required empty public constructor
     }
 
@@ -19,6 +19,6 @@ public class UlasanFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ulasan, container, false);
+        return inflater.inflate(R.layout.fragment_kuliner, container, false);
     }
 }

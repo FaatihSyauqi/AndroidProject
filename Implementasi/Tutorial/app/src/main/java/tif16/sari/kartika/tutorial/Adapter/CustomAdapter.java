@@ -1,5 +1,7 @@
 package tif16.sari.kartika.tutorial.Adapter;
 
+import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -7,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import tif16.sari.kartika.tutorial.MainActivity;
 import tif16.sari.kartika.tutorial.R;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
@@ -19,7 +22,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public ViewHolder(View v) {
             super(v);
-            bapa = (ImageView) v.findViewById(R.id.bapa);
+            bapa = (ImageView) v.findViewById(R.id.imageView);
         }
         public ImageView getImageView() {
             return bapa;
@@ -39,7 +42,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, final int position) {
+    public void onBindViewHolder(ViewHolder viewHolder, int position) {
     }
 
     @Override

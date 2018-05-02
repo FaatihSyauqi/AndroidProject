@@ -15,9 +15,9 @@ import android.text.Spanned;
 import android.text.style.ImageSpan;
 
 import tif16.sari.kartika.tutorial.R;
-import tif16.sari.kartika.tutorial.Fragment.GaleryFragment;
-import tif16.sari.kartika.tutorial.Fragment.DeskripsiFragment;
-import tif16.sari.kartika.tutorial.Fragment.MapsFragment;
+import tif16.sari.kartika.tutorial.Fragment.infoDetail.GaleryFragment;
+import tif16.sari.kartika.tutorial.Fragment.infoDetail.DeskripsiFragment;
+import tif16.sari.kartika.tutorial.Fragment.infoDetail.MapsFragment;
 
 public class MyAdapter extends FragmentPagerAdapter {
     private Context mContext;

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/detailinfo"
-    tools:context=".Fragment.DetailFragment">
+    tools:context=".Fragment.infoDetail.DetailFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <!--<ImageView-->
@@ -24,11 +24,11 @@
             android:text="Alamat :" />
 
         <EditText
-            android:id="@+id/alamat_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:freezesText="true"
-            android:hint="Disini alamat tempatnya" />
+            android:text="ini alamat tempatnya"
+            android:inputType="none"
+            android:editable="false" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,39 +37,24 @@
             android:layout_marginTop="20dp"/>
 
         <EditText
-            android:id="@+id/website_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:freezesText="true"
-            android:hint="Disini alamat website" />
+            android:text="ini alamat websitenya"
+            android:inputType="none"
+            android:editable="false" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No Telefon :"
+            android:text="Jam Operasional :"
             android:layout_marginTop="20dp"/>
 
         <EditText
-            android:id="@+id/telefon_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:freezesText="true"
-            android:hint="Disini no telefonnya" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Jam Operasional :" />
-
-        <EditText
-                android:id="@+id/jam_op_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:freezesText="true"
-                android:hint="Disini jam operasionalnya" />
-    </LinearLayout>
-
-</LinearLayout>
+            android:text="ini jam operasionalnya"
+            android:inputType="none"
+            android:editable="false" />
+        </LinearLayout>
 
 </RelativeLayout>

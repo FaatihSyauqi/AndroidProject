@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/ulasantempat"
-    tools:context=".Fragment.UlasanFragment">
+    tools:context=".Fragment.infoDetail.UlasanFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <!--<ImageView-->
@@ -24,11 +24,9 @@
             android:text="Nama :" />
 
         <EditText
-            android:id="@+id/nama_rat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Masukkan nama anda"
-            android:text="" />
+            android:text="Katika Sari" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,12 +35,10 @@
             android:layout_marginTop="10dp"/>
 
         <EditText
-            android:id="@+id/ulasan_rat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Masukkan ulasan tempat"
-            android:freezesText="true"
-            android:text="" />
+            android:text="ini ulasan tempatnya"
+            android:freezesText="true"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,12 +52,11 @@
             android:layout_height="wrap_content"/>
 
         <Button
-            android:id="@+id/ulasan_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right"
-            android:layout_marginRight="20dp"
-            android:text="Tambah Ulasan" />
+            android:text="Tambah Ulasan"
+            android:layout_marginRight="20dp"/>
 
 
     </LinearLayout>
