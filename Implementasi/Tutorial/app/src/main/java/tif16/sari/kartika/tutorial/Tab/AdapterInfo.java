@@ -20,7 +20,7 @@ import static android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE;
 public class AdapterInfo extends FragmentPagerAdapter {
     private Context mContext;
     private String[] titles = {"Belanja","Wisata","Kuliner"};
-    int[] icon = new int[]{R.drawable.ic_shopping_basket_black_24dp,R.drawable.ic_card_travel_black_24dp,R.drawable.ic_restaurant_black_24dp};
+  //  int[] icon = new int[]{R.drawable.ic_shopping_basket_black_24dp,R.drawable.ic_card_travel_black_24dp,R.drawable.ic_restaurant_black_24dp};
     private int heightIcon;
 
     public AdapterInfo(FragmentManager fm, Context c){
@@ -55,15 +55,9 @@ public class AdapterInfo extends FragmentPagerAdapter {
     }
 
     public CharSequence getPageTitle(int position){
-        Drawable d = mContext.getResources().getDrawable(icon[position]);
-        d.setBounds(0,0,heightIcon,heightIcon);
-        ImageSpan is = new ImageSpan(d);
-
-        SpannableString sp = new SpannableString(" ");
-        sp.setSpan(is,0,sp.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-
-        return sp;
+        return titles[position];
     }
+
 
 }
 

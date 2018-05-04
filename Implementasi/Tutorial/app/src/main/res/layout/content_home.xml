@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
     android:orientation="vertical"
-    tools:context="com.example.irakusnindi.home.MainActivity">
+    android:layout_below="@+id/toolbar"
+    android:layout_marginTop="60dp"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="tif16.sari.kartika.tutorial.HomeActivity"
+    tools:showIn="@layout/activity_home">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar">
 
         <LinearLayout
             android:id="@+id/linear_lay"
@@ -35,7 +38,7 @@
                     android:maxWidth="60dp"
                     android:scaleType="fitCenter"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:srcCompat="@drawable/bandung"
+                    app:srcCompat="@drawable/bapa"
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="162dp"
                     tools:layout_editor_absoluteY="16dp" />
@@ -64,7 +67,7 @@
                 android:adjustViewBounds="true"
                 android:maxHeight="160dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/bandung"
+                app:srcCompat="@drawable/bapa"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="111dp" />
@@ -85,7 +88,8 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_belanja"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"/>
             </LinearLayout>
 
             <LinearLayout
@@ -103,7 +107,8 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_kuliner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"/>
             </LinearLayout>
 
             <LinearLayout
@@ -121,23 +126,11 @@
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_alam"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:scrollbars="horizontal"/>
             </LinearLayout>
         </LinearLayout>
 
     </ScrollView>
 
-
-
-    <android.support.design.widget.BottomNavigationView
-        android:id="@+id/navigation"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="0dp"
-        android:layout_marginStart="0dp"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/navigation" />
- </LinearLayout>
+</RelativeLayout>
