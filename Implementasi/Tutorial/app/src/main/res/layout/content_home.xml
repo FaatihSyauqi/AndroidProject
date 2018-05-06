@@ -13,18 +13,18 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar">
 
         <LinearLayout
-            android:id="@+id/linear_lay"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="60dp">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="92dp">
+                android:layout_height="70dp">
 
                 <ImageView
                     android:id="@+id/imagebdg"
@@ -56,7 +56,6 @@
                     tools:ignore="MissingConstraints"
                     tools:layout_editor_absoluteX="101dp"
                     tools:layout_editor_absoluteY="61dp" />
-
             </RelativeLayout>
 
 
@@ -70,9 +69,9 @@
                 app:srcCompat="@drawable/bapa"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="111dp" />
-
-
+                tools:layout_editor_absoluteY="111dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -82,13 +81,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/warnaHijau"
+                    android:textColor="@color/colorPrimaryDark"
                     android:text="@string/belanja"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_belanja"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
                     android:scrollbars="horizontal"/>
             </LinearLayout>
 
@@ -101,13 +101,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/warnaHijau"
-                    android:text="@string/belanja"/>
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="Kuliner"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_kuliner"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
                     android:scrollbars="horizontal"/>
             </LinearLayout>
 
@@ -120,13 +121,14 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/warnaHijau"
-                    android:text="@string/belanja"/>
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="Wisata"/>
 
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recycler_alam"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginTop="10dp"
                     android:scrollbars="horizontal"/>
             </LinearLayout>
         </LinearLayout>

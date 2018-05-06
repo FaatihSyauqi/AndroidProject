@@ -1,4 +1,4 @@
-package tif16.sari.kartika.tutorial.Fragment.infoDetail;
+package tif16.sari.kartika.tutorial.Fragment.Detail;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import tif16.sari.kartika.tutorial.Adapter.GridAdapter;
+import tif16.sari.kartika.tutorial.Adapter.info.GridAdapter;
 import tif16.sari.kartika.tutorial.R;
 
 public class GaleryFragment extends Fragment {

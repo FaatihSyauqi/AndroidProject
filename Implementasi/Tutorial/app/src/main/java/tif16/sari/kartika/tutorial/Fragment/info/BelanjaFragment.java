@@ -1,29 +1,17 @@
 package tif16.sari.kartika.tutorial.Fragment.info;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
 
-import tif16.sari.kartika.tutorial.Adapter.GridAdapter;
-import tif16.sari.kartika.tutorial.Fragment.infoDetail.DetailFragment;
-import tif16.sari.kartika.tutorial.Fragment.infoDetail.UlasanFragment;
-import tif16.sari.kartika.tutorial.InfoActivity;
-import tif16.sari.kartika.tutorial.MainActivity;
+import tif16.sari.kartika.tutorial.Adapter.home.BelanjaAdapter;
+import tif16.sari.kartika.tutorial.Adapter.info.BelanjaClickAdapter;
+import tif16.sari.kartika.tutorial.Adapter.info.GridAdapter;
 import tif16.sari.kartika.tutorial.R;
 
 public class BelanjaFragment extends Fragment {
@@ -46,10 +34,10 @@ public class BelanjaFragment extends Fragment {
         mRecycleView = (RecyclerView) view.findViewById(R.id.recyclerView);
         mRecycleView.setHasFixedSize(true);
 
-        mLayoutManager = new GridLayoutManager(getActivity(),2);
+        mLayoutManager = new GridLayoutManager(getActivity(),1);
         mRecycleView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new GridAdapter();
+        mAdapter = new BelanjaClickAdapter();
         mRecycleView.setAdapter(mAdapter);
 
         return view;

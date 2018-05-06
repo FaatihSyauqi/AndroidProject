@@ -5,8 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="tif16.sari.kartika.tutorial.MainActivity"
-    tools:showIn="@layout/activity_main">
+    tools:context="tif16.sari.kartika.tutorial.DetailActivity"
+    tools:showIn="@layout/activity_detail">
 
     <FrameLayout
         android:id="@+id/content"

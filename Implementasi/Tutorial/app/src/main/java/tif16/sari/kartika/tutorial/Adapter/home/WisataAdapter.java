@@ -15,22 +15,22 @@ import java.util.List;
 
 import tif16.sari.kartika.tutorial.DetailActivity;
 import tif16.sari.kartika.tutorial.R;
-import tif16.sari.kartika.tutorial.model.Kuliner;
+import tif16.sari.kartika.tutorial.model.Wisata;
 
 import static android.content.ContentValues.TAG;
 
-public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.MyViewHolder> {
+public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHolder> {
 
     private Context mContext;
-    private List<Kuliner> albumList;
+    private List<Wisata> albumList;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         // public TextView name;
-        public ImageView imgKuliner, overflow;
+        public ImageView imgWisata, overflow;
 
         public MyViewHolder(View view) {
             super(view);
-            imgKuliner = (ImageView) view.findViewById(R.id.img_kuliner);
+            imgWisata = (ImageView) view.findViewById(R.id.img_wisata);
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -42,7 +42,7 @@ public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.MyViewHo
         }
     }
 
-    public KulinerAdapter(Context mContext, List<Kuliner> albumList) {
+    public WisataAdapter(Context mContext, List<Wisata> albumList) {
         this.mContext = mContext;
         this.albumList = albumList;
     }
@@ -50,18 +50,18 @@ public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_kuliner, parent, false);
+                .inflate(R.layout.list_wisata, parent, false);
 
         return new MyViewHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Kuliner kuliner = albumList.get(position);
+        Wisata wisata = albumList.get(position);
 
 
         // loading album cover using Glide library
-        Glide.with(mContext).load(kuliner.getFoto()).into(holder.imgKuliner);
+        Glide.with(mContext).load(wisata.getFoto()).into(holder.imgWisata);
 
     }
 

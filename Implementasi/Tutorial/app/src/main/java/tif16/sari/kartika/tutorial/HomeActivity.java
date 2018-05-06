@@ -15,13 +15,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 import tif16.sari.kartika.tutorial.Adapter.home.BelanjaAdapter;
+import tif16.sari.kartika.tutorial.Adapter.home.KulinerAdapter;
+import tif16.sari.kartika.tutorial.Adapter.home.WisataAdapter;
 import tif16.sari.kartika.tutorial.model.Belanja;
+import tif16.sari.kartika.tutorial.model.Kuliner;
+import tif16.sari.kartika.tutorial.model.Wisata;
 
 public class HomeActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     Belanja belanja;
     BelanjaAdapter belanjaAdapter;
     private List<Belanja> list;
+    Kuliner kuliner;
+    KulinerAdapter kulinerAdapter;
+    private List<Kuliner> listKuliner;
+    Wisata wisata;
+    WisataAdapter wisataAdapter;
+    private List<Wisata> listWisata;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -58,14 +68,30 @@ public class HomeActivity extends AppCompatActivity {
         list = new ArrayList<>();
         belanjaAdapter = new BelanjaAdapter(this, list);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_belanja);
-        LinearLayoutManager horizontalLayoutManagaer
+        LinearLayoutManager horizontalLayoutManager
                 = new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(horizontalLayoutManagaer);
-        //  fotoAdapter.setClickListener(this);
+        recyclerView.setLayoutManager(horizontalLayoutManager);
         recyclerView.setAdapter(belanjaAdapter);
         DataBelanja();
-    }
 
+        listKuliner = new ArrayList<>();
+        kulinerAdapter = new KulinerAdapter(this, listKuliner);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_kuliner);
+        LinearLayoutManager horizontalLayoutManager1
+                = new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(horizontalLayoutManager1);
+        recyclerView.setAdapter(kulinerAdapter);
+        DataKuliner();
+
+        listWisata = new ArrayList<>();
+        wisataAdapter = new WisataAdapter(this, listWisata);
+        recyclerView = (RecyclerView) findViewById(R.id.recycler_alam);
+        LinearLayoutManager horizontalLayoutManager2
+                = new LinearLayoutManager(HomeActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(horizontalLayoutManager2);
+        recyclerView.setAdapter(wisataAdapter);
+        DataWisata();
+    }
 
     private void DataBelanja(){
         int[] gambar = new int[]{
@@ -86,10 +112,47 @@ public class HomeActivity extends AppCompatActivity {
         list.add(belanja);
     }
 
+    private void DataKuliner(){
+        int[] gambar = new int[]{
+                R.drawable.bapa,
+                R.drawable.bapa,
+                R.drawable.bapa,
+                R.drawable.bapa
+        };
+        Kuliner kuliner = new Kuliner(gambar[0]);
+        listKuliner.add(kuliner);
+        kuliner = new Kuliner(gambar[0]);
+        listKuliner.add(kuliner);
+        kuliner = new Kuliner(gambar[1]);
+        listKuliner.add(kuliner);
+        kuliner = new Kuliner(gambar[2]);
+        listKuliner.add(kuliner);
+        kuliner = new Kuliner(gambar[3]);
+        listKuliner.add(kuliner);
+    }
+
+    private void DataWisata(){
+        int[] gambar = new int[]{
+                R.drawable.bapa,
+                R.drawable.bapa,
+                R.drawable.bapa,
+                R.drawable.bapa
+        };
+        Wisata wisata = new Wisata(gambar[0]);
+        listWisata.add(wisata);
+        wisata = new Wisata(gambar[0]);
+        listWisata.add(wisata);
+        wisata = new Wisata(gambar[1]);
+        listWisata.add(wisata);
+        wisata = new Wisata(gambar[2]);
+        listWisata.add(wisata);
+        wisata = new Wisata(gambar[3]);
+        listWisata.add(wisata);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+//        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 

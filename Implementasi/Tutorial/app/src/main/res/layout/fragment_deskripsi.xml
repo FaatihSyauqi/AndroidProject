@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="tif16.sari.kartika.tutorial.Fragment.infoDetail.DeskripsiFragment">
+    android:id="@+id/deskripsi"
+    tools:context="tif16.sari.kartika.tutorial.Fragment.Detail.DeskripsiFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ImageView
@@ -11,18 +12,11 @@
         android:layout_height="200dp"
         android:src="@drawable/bapa"/>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/deskripsi"
-        android:layout_marginTop="210dp"
-        android:layout_marginBottom="10dp"
-        tools:context=".DeskripsiFragment">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginTop="200dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,7 +51,4 @@
                 android:layout_marginTop="10dp"
                 android:visibility="visible"/>
         </LinearLayout>
-
-    </FrameLayout>
-
 </FrameLayout>

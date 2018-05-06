@@ -15,21 +15,23 @@ import android.text.Spanned;
 import android.text.style.ImageSpan;
 
 import tif16.sari.kartika.tutorial.R;
-import tif16.sari.kartika.tutorial.Fragment.infoDetail.GaleryFragment;
-import tif16.sari.kartika.tutorial.Fragment.infoDetail.DeskripsiFragment;
-import tif16.sari.kartika.tutorial.Fragment.infoDetail.MapsFragment;
+import tif16.sari.kartika.tutorial.Fragment.Detail.GaleryFragment;
+import tif16.sari.kartika.tutorial.Fragment.Detail.DeskripsiFragment;
+import tif16.sari.kartika.tutorial.Fragment.Detail.MapsFragment;
 
 public class MyAdapter extends FragmentPagerAdapter {
     private Context mContext;
     private String[] titles ={"Galeri","Deskripsi","Peta"};
     int[] icon = new int[]{R.drawable.ic_image_black_24dp,R.drawable.ic_description_black_24dp,R.drawable.ic_map_black_24dp};
     private int heightIcon;
+    private int widthIcon;
 
     public MyAdapter(FragmentManager fm, Context c){
         super(fm);
         mContext = c;
         double scale = c.getResources().getDisplayMetrics().density;
-        heightIcon=(int)(24*scale+0.5f);
+        heightIcon=(int)(18*scale+0.5f);
+        widthIcon=(int)(20*scale+0.5f);
     }
 
     @Override
@@ -57,7 +59,7 @@ public class MyAdapter extends FragmentPagerAdapter {
 
     public CharSequence getPageTitle(int position){
         Drawable d = mContext.getResources().getDrawable(icon[position]);
-        d.setBounds(0,0,heightIcon,heightIcon);
+        d.setBounds(0,0,widthIcon,heightIcon);
         ImageSpan is = new ImageSpan(d);
 
         SpannableString sp = new SpannableString(" ");

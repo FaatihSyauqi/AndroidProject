@@ -13,8 +13,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import tif16.sari.kartika.tutorial.InfoActivity;
-import tif16.sari.kartika.tutorial.MainActivity;
+import tif16.sari.kartika.tutorial.DetailActivity;
 import tif16.sari.kartika.tutorial.R;
 import tif16.sari.kartika.tutorial.model.Belanja;
 
@@ -40,7 +39,7 @@ public class BelanjaAdapter extends RecyclerView.Adapter<BelanjaAdapter.MyViewHo
                 @Override
                 public void onClick(View v) {
                     Log.d(TAG, "List ke " + getPosition() + " di klik.");
-                    Intent intent = new Intent(v.getContext(),MainActivity.class);
+                    Intent intent = new Intent(v.getContext(),DetailActivity.class);
                     v.getContext().startActivity(intent);
                 }
             });
@@ -63,9 +62,6 @@ public class BelanjaAdapter extends RecyclerView.Adapter<BelanjaAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
         Belanja belanja = albumList.get(position);
-        // holder.name.setText(geopark.name);
-        //    holder.lokasi.setText(geopark.location);
-
 
         // loading album cover using Glide library
         Glide.with(mContext).load(belanja.getFoto()).into(holder.imgBelanja);

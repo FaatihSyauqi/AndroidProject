@@ -1,4 +1,4 @@
-package tif16.sari.kartika.tutorial.Fragment.infoDetail;
+package tif16.sari.kartika.tutorial.Fragment.Detail;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
