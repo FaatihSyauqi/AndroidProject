@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/deskripsi"
+    tools:context="tif16.sari.kartika.tutorial.Fragment.Detail.DeskripsiFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/bapa"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="200dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:text="Detail Info"
+                    android:visibility="visible"
+                    android:textSize="15dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginLeft="60dp" />
+                <TextView
+                    android:id="@+id/ulasan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ulasan Tempat"
+                    android:visibility="visible"
+                    android:textSize="15dp"
+                    android:layout_marginRight="40dp"
+                    android:layout_marginLeft="30dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/deskripsi_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ini deskripsi"
+                android:layout_marginTop="10dp"
+                android:visibility="visible"/>
+        </LinearLayout>
+</FrameLayout>
