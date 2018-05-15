@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Tab>
+    <tab
+        id="@+id/home"
+        icon="@drawable/ic_home_black_24dp"
+        activeColor="@color/colorPrimary"
+        titleSize="6dp"
+        title="Home"
+    />
+
+    <tab
+        id="@+id/info"
+        icon="@drawable/ic_info_outline_black_24dp"
+        activeColor="@color/colorPrimary"
+        titleSize="6dp"
+        title="Info"
+        />
+</Tab>
