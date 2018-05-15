@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import tif16.sari.kartika.tutorial.R;
 import tif16.sari.kartika.tutorial.model.Item;
@@ -16,16 +17,17 @@ import java.util.List;
 public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
     private Context mContext;
     List<Item> mItems;
-
     public GridAdapter() {
         super();
         mItems = new ArrayList<Item>();
         Item nama = new Item();
         nama.setFoto(R.drawable.bapa);
+        nama.setNamaTempat("BEC");
         mItems.add(nama);
 
         nama = new Item();
         nama.setFoto(R.drawable.bapa);
+        nama.setNamaTempat("BIP");
         mItems.add(nama);
 
         nama = new Item();
@@ -136,6 +138,7 @@ public class GridAdapter extends RecyclerView.Adapter<GridAdapter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder  {
 
         public ImageView foto;
+        public TextView nama_tempat;
 
         public ViewHolder(View view) {
             super(view);

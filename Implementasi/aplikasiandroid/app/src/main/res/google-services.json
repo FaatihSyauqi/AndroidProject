@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "854633500074",
+    "firebase_url": "https://androidparawisata.firebaseio.com",
+    "project_id": "androidparawisata",
+    "storage_bucket": "androidparawisata.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854633500074:android:77a70133eb48efe4",
+        "android_client_info": {
+          "package_name": "com.example.irakusnindi.home"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854633500074-f0m76ihd52m279i7fvc6bmftrr4cmvrf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB-0MAqVn0BNG-dYNpBImlkQ_Q5ed8Lsv8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

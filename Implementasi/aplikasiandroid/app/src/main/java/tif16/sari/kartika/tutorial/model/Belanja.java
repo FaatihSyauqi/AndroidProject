@@ -10,7 +10,7 @@ import tif16.sari.kartika.tutorial.HomeActivity;
 
 public class Belanja {
     private int foto;
-
+    private String nama_tempat;
     public Belanja() {
     }
     public Belanja(int foto){
@@ -25,4 +25,11 @@ public class Belanja {
         this.foto = foto;
     }
 
+    public String getNama_tempat() {
+        return nama_tempat;
+    }
+
+    public void setNama_tempat(String nama_tempat) {
+        this.nama_tempat = nama_tempat;
+    }
 }
