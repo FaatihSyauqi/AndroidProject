@@ -1,0 +1,11 @@
+RewriteEngine on
+
+RewriteRule ^home$ index.php [L]
+RewriteRule ^add$ add_place.php [L]
+RewriteRule ^sign-in$ sign-in.php [L]
+RewriteRule ^categories$ category.php [L]
+RewriteRule ^add-category$ add_category.php [L]
+RewriteRule ^config$ configuration.php [L]
+
+
+Options All -Indexes
