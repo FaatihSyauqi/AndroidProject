@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Visit The City Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+		
+		<h3 class="center alt">&ldquo;City App&rdquo; Documentation by &ldquo;Bezets&rdquo; v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">&ldquo;City App&rdquo;</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+						Created: 09/08/2017<br>
+						By: Bezets<br>
+						Email: <a href="mailto:ihsanbadru@gmail.com" target="_blank">ihsanbadru@gmail.com</a><br>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+			
+			<div>
+				<p class="prepend-top append-0">Thank you for purchasing this template. If you have any questions that are beyond the scope of this template, please feel free to email via my user page contact form <a href="http://themeforest.net/user/bezets" target="_blank">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#introduction">Introduction</a></li>
+			<li><a href="#gettingStarted">Getting Started</a></li>
+			<li><a href="#importProject">Import the Project in Android Studio</a></li>
+			<li><a href="#renameApp">Rename Application Package Name</a></li>
+			<li><a href="#changeAppName">Change Application Name</a></li>
+			<li><a href="#backendInstall">Admin Backend Installation</a></li>
+			<li><a href="#settingFirebase">Firebase Installation</a></li>
+			<li><a href="#admob">Admob Configuration</a></li>
+			<li><a href="#mapsGoogle">Maps Configuration</a></li>
+			<li><a href="#additional">Additional</a></li>
+			<li><a href="#usefull">Useful Tutorials</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="introduction"><strong>A) Introduction</strong> - <a href="#toc">top</a></h3>
+		<p>City App is a native java android application template for city guide solution for showing interesting place from a city with description an some attribute. An Augmented Reality Technology is implemented for searching a place from user location through camera. Admin Backend is integrated to manage places data, you can edit, update or delete data. Integrated with Firebase so apps works with offline mode</p>
+		
+		<p><b>Features:</b><br>
+			<ul>
+				<li>Using Android Studio</li>
+				<li>Animation transition effect</li>
+				<li>Custom Activity on App Crash</li>
+				<li>Integrated with Firebase Authentication</li>
+				<li>Integrated with Firebase Database</li>
+				<li>Integrated with Firebase Remote Config</li>
+				<li>Integrated with Firebase Crash Reporting</li>
+				<li>Integrated with Firebase Storage</li>
+				<li>Integrated with AdMob (Banner, Interstitial, Native)</li>
+				<li>Online and Offline Mode Support</li>
+				<li>Google Maps Support</li>
+				<li>Android Parallax Scrollbar</li>
+				<li>Support Android 4.1 and Up</li>
+				<li>Augmented Reality Based Location</li>
+			</ul>
+		</p>
+		
+		<p>
+			After you buy this item you will get project file of City App Template code, apk file, admin panel and also this documentation file to guide you installing this app.
+		</p>
+		<hr>
+		
+		<h3 id="gettingStarted"><strong>B) Getting Started</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Before doing installation, you need to do the following things:
+			<ol>
+				<li>Have a web hosting to store admin panel files. Because this project using cpanel, a web hosting with cpanel is recommended or you can use local webserver like xampp, etc with latest version.</li>
+				<li>
+					Install tools that requires for developing Android app such as <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank">Java Development Kit</a> and Android Studio as the official Android IDE. For update tutorial about how to install them, you can see and Download from <a href="https://developer.android.com/studio/index.html" target="_blank">Android Developer website</a>.
+				</li>
+				<li>
+					If you do all things above, you can go to the next step.
+				</li>
+			</ol>
+		</p> 
+		
+		
+		<hr>
+		
+		<h3 id="importProject"><strong>C) Import the Project in Android Studio</strong> - <a href="#toc">top</a></h3>
+		
+		<p>To import this project to Android Studio do this following steps.</p>
+		
+		<ol>
+			<li>Open <b>Android Studio</b> > <b>Import Project (Eclipse ADT, Gradle, etc.)</b></li>
+			<li>New window will opened > Browse to directory where you place "<b>CityAppTemplate/AndroidStudioSource/CityApp</b>" project > <b>OK</b></li>
+			<li>Wait for few minutes until all process import has finished.</li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="renameApp"><strong>D) Rename Application Package Name</strong> - <a href="#toc">top</a></h3>
+		
+		<ol>
+			<li>First click one on your package and then click setting icon on Android Studio</li>
+			<li>Close / Unselect <b>Compact Empty Middle Packages</b></li>
+			<li>Then, right click your package and rename it</li>
+			<li>Right click on the root folder of your project</li>
+			<li>Click "<b>Open Module Setting</b>"</li>
+			<li>Go to the <b>Flavours</b> tab</li>
+			<li>Change the application ID with same name of your package name before > Pres <b>OK</b></li>
+			<li>Open <b>Android studio</b> > <b>app</b> > <b>java</b> > <b>com.your.project</b> > <b>errorhandler</b> > <b>CustomActivityOnCrash.java</b></li>
+			<li>Change "<b>PACKAGE_NAME</b>" with your package name<br><img src="assets/images/allchange.jpg"/></li>
+		</ol>
+		
+		<p><img src="assets/images/renameapp1.png"/ width="100%"></p>
+		<p><img src="assets/images/renameapp2.jpg"/ ></p>
+		
+		<hr>
+		
+		<h3 id="changeAppName"><strong>E) Change Application Name</strong> - <a href="#toc">top</a></h3>
+		
+		<p>			
+			<ol>
+				<li>Open <b>Android studio</b> > <b>app</b> > <b>res</b> > <b>values</b> > <b>string.xml</b></li>
+				<li>Select '<b>strings.xml</b>'</li>
+				<li>Enter your app name inside "<b>app_name</b>" string tag :</li>
+				<li><pre style="color: rgb(0, 0, 0); font-family: 'Courier New';">&lt;<span style="color:#000080;font-weight:bold;">string </span><span style="color:#0000ff;font-weight:bold;">name=</span><span style="color:#008000;font-weight:bold;">"app_name"</span>&gt;Visit The City&lt;/<span style="color:#000080;font-weight:bold;">string</span>&gt; </pre></li>
+				
+			</ol>
+			
+		</p>
+		
+		<p><img src="assets/images/changename.jpg" width="100%"/ ></p>
+		
+		<hr>
+		
+		<h3 id="backendInstall"><strong>F) Admin Backend Installation</strong> - <a href="#toc">top</a></h3>
+		
+		<ul>
+			
+			<li>Open XAMPP Control Panel or login to your cpanel</li>
+			<li>Start Apache Service if you use XAMPP</li>
+			<li>Copy or upload all files and folder on directory <b>CityAppTemplate/WebAdminSource/</b> to <b>C://xampp/htdocs/yoursite</b></li>
+			
+		</ul>
+		
+		<hr>
+		
+		<h3 id="settingFirebase"><strong>G) Firebase Installation</strong> - <a href="#toc">top</a></h3>
+		
+		<ol>
+			<li>Open <a href="https://console.firebase.google.com" target="_blank"><b>Firebase Console Web</b></a></li>
+			<li>Login/Sign Up with your google account</li>
+			<li>Once you have logged in Click <b>Add project</b></li>
+			<li>Fill your Project name, Country/region, and then click <b>Create Project</b></li>
+			<li><strong>Add Firebase to Android Project</strong></li>
+			<ul>
+				
+				<li>Select <b>Add Firebase to your Android Project</b></li>
+				<li>Insert Android package name, App Nickname, and Debug signing certificate SHA-1</li>
+				<li>To get SHA-1 follow this <a href="https://developers.google.com/android/guides/client-auth" target="_blank">instruction</a></li>
+				<li>Click <b>Register App</b></li>
+				<li>Download "<b>google-services.json</b>" config file and copy to <b>Android Studio</b> > <b>app folder</b>, overwrite file<br>
+					
+				<img src="assets/images/fbconfig1.jpg"/ ></li>
+			</ul>
+			<li><strong>Add Firebase to Backend Web</strong></li>
+			<ul>
+				
+				<li>Select <b>Add Firebase to your Web Project</b></li>
+				<li>Copy and paste the snippet code to <b>firebase.js</b> file in directory <b>C://xampp/htdocs/yoursite/scripts/</b></li>
+				<li>Change all <b><i>BASE_URL, STORAGE_URL, WEB_TITLE</i></b> with yours</li>
+				
+				<img src="assets/images/fbbackend.jpg"/ >
+			</ul>
+			<li><strong>Firebase Auth Configuration</strong></li>
+			<ul>
+				<li>Click <b>Authentication</b> in sidebar menu
+				</li>
+				<li>Click <b>Setup Sign-in method</b></li>
+				<li>Enable <b>Email/Password, Google, Facebook, and Anonymous</b> Provider</li>
+				<li>For <b>Facebook Login</b>, follow this instruction <a href="https://firebase.google.com/docs/auth/android/facebook-login" target="_blank">Click</a></li>
+				<li>Scroll down to advanced section</li>
+				<li>Click change on <b>Multiple accounts per email address</b></li>
+				<li>Change the setting to <b>Allow creation of multiple accounts with the same email address</b> and then Save</li>
+				<img src="assets/images/signinmethod2.PNG"/>
+				<li>Back to Users Tab, <b>Add User</b> with Email and Password (Example. email: admin@admin.com, pass: admin) for Web Backend Login</li>
+			</ul>
+			<li><strong>Firebase Storage Configuration</strong></li>
+			<ul>
+				<li>Click <b>Storage</b> in sidebar menu
+				</li>
+				<li>Change Storage Rules</li>
+				<img src="assets/images/storagerules.png"/>
+				<li>Open <b>Android Studio > app > java > com.your.project > utils > Constants.java</b></li>
+				
+				<li>Change <b>FIREBASE_PROJECT_ID</b> with yours</li>
+				<img src="assets/images/projectid.png"/>
+			</ul>
+		</ol>
+		
+		<h3 id="admob"><strong>H) Admob Configuration</strong> - <a href="#toc">top</a></h3>
+		
+		<ul>
+			
+			<li>Click <b>AdMob</b> Menu in Firebase Console</li>
+			<li><b>Sign Up</b> for AdMob account If you don't have AdMob account, If you have AdMob account Select <b>linking your apps in AdMob</b><br><img src="assets/images/admob.jpg"/></li>
+			<li>Select <b>Monetise</b> Menu</li>
+			<li>Click <b>Monetise new App</b></li>
+			<li>Add your Project</li>
+			<li>Create Banner, Interstitial, and Native Ads Format</li>
+			<li>Now change the admob_id on Android Studio Project</li>
+			<li>Open <b>Android Studio > app > res > values > strings.xml</b><br><img src="assets/images/changename.jpg" width="100%"/></li>
+			<li>Change <b>banner_ad_unit_id, interstitial_ad_unit_id, native_ad_unit_id</b> with yours<br><img src="assets/images/admob2.jpg"/></li>
+		</ul>
+		
+		<hr>
+		
+		<h3 id="mapsGoogle"><strong>I) Maps Configuration</strong> - <a href="#toc">top</a></h3>
+		
+		
+		
+		<li><strong>Online Maps (Google Maps API)</strong></li>
+		<ul>
+			<li>Create <a href="https://developers.google.com/maps/documentation/android-api/signup" target="_blank">Google Maps API KEY</a></li>
+			<li>Click <b>GET KEY</b> > <b>Select Project</b> > <b>Enable API</b> > Copy your Key</li>
+			<li>Now Change Google Maps API Key in your project</li>
+			<li>Open <b>Android Studio > app > res > values > google_maps_api.xml</b></li>
+			<li>Change <b>google_maps_key</b> with yours<br><img src="assets/images/gmaps.jpg"/></li>
+		</ul>
+		
+		<h3 id="additional"><strong>J) Additional Config</strong> - <a href="#toc">top</a></h3>
+		<ul>
+			<li>Change all value in res > values > <b>string.xml</b> file</li>
+			<img src="assets/images/config.png"/>
+			<li>Change app language in res > values ><b>string.xml</b> file</li>
+		</ul>
+		
+		<hr>
+		
+		<h3 id="usefull"><strong>K) Useful Tutorials</strong> - <a href="#toc">top</a></h3>
+		
+		<ul>
+			<li><a href="http://stackoverflow.com/questions/16804093/android-studio-rename-package/29092698#29092698" target="_blank">How can I change the package name?</a> - you need to do it, before uploading the app to Google Play Store.</li>
+			<li><a href="https://developer.android.com/studio/publish/app-signing.html" target="_blank">How to export certified apk file for Google Play Store (Official Documentation)</a> or <a href="https://www.udacity.com/wiki/ud853/course_resources/creating-a-signed-apk" target="_blank">Stackoverflow thread</a></li>
+			<li><a href="https://developer.android.com/distribute/best-practices/launch/launch-checklist.html" target="_blank">Launch Checklist for Google Play Store</a></li>
+			<li><a href="https://developer.android.com/studio/publish/index.html" target="_blank">Publishing Android Application (Official Documentation)</a></li>
+			<li><a href="https://github.com/graphhopper/graphhopper/blob/master/docs/android/index.md" target="_blank">How to create offline routing for OpenStreetMap</a></li>
+			<li><a href="https://coderwall.com/p/r09hoq/android-generate-release-debug-keystores" target="_blank">Generate Release/Debug Keystores</a></li>
+		</ul>
+		
+		<hr>
+		
+		<hr>
+		<p>Once again, thank you so much for purchasing this template. As I said at the beginning, I'd be glad to help you if you have any questions relating to this template. No guarantees, but I'll do my best to assist.</p> 
+		
+		<p class="append-bottom alt large"><strong>Bezets</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>																							
