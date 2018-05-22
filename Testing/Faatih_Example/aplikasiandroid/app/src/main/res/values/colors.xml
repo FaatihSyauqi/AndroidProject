@@ -5,4 +5,6 @@
     <color name="colorAccent">#d19af9</color>
     <color name="warnaHijau">#0ab950</color>
     <color name="aqua">#05c5ff</color>
+    <color name="colortab">#c0d3d9</color>
+    <color name="colorTabPrimary">#6ec7eb</color>
 </resources>

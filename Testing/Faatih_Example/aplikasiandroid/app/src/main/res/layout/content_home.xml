@@ -29,7 +29,7 @@
                 android:adjustViewBounds="true"
                 android:maxHeight="160dp"
                 android:scaleType="fitCenter"
-                app:srcCompat="@drawable/bapa_home_1"
+                app:srcCompat="@drawable/bapa_home"
                 tools:ignore="MissingConstraints"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="111dp"

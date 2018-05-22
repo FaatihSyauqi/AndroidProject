@@ -6,7 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class intro extends AppCompatActivity {
-    private static int WELCOME_TIMEOUT = 2000;
+    private static int WELCOME_TIMEOUT = 1500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

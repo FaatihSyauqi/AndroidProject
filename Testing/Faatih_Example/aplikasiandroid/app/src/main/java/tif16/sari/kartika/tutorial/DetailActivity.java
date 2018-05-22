@@ -26,8 +26,8 @@ public class DetailActivity extends AppCompatActivity {
 
         mSlidingTabLayout = (SlidingTabLayout)findViewById(R.id.st_tab);
         mSlidingTabLayout.setDistributeEvenly(true);
-        mSlidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-        mSlidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colorAccent));
+        mSlidingTabLayout.setBackgroundColor(getResources().getColor(R.color.colorTabPrimary));
+        mSlidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.colortab));
         mSlidingTabLayout.setCustomTabView(R.layout.tab_view,R.id.tv_tab);
         mSlidingTabLayout.setViewPager(mViewPager);
     }
