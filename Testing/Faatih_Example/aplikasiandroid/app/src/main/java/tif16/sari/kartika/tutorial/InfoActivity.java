@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import tif16.sari.kartika.tutorial.Tab.AdapterInfo;
-import tif16.sari.kartika.tutorial.Tab.MyAdapter;
 import tif16.sari.kartika.tutorial.Tab.SlidingTabLayout;
 
 public class InfoActivity extends AppCompatActivity {

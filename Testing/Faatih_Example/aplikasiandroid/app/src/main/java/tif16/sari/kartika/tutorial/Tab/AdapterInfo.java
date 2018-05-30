@@ -27,7 +27,7 @@ public class AdapterInfo extends FragmentPagerAdapter {
         super(fm);
         mContext = c;
         double scale = c.getResources().getDisplayMetrics().density;
-        heightIcon = (int)(24*scale+0.5f);
+        heightIcon = (int)(20*scale+0.5f);
     }
 
     @Override

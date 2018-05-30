@@ -18,37 +18,129 @@
             android:orientation="vertical"
             android:layout_marginTop="200dp">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/detail"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:text="Detail Info"
-                    android:visibility="visible"
-                    android:textSize="15dp"
-                    android:layout_marginRight="30dp"
-                    android:layout_marginLeft="60dp" />
-                <TextView
-                    android:id="@+id/ulasan"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ulasan Tempat"
-                    android:visibility="visible"
-                    android:textSize="15dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginLeft="30dp"/>
-            </LinearLayout>
+                    android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/deskripsi_content"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Ini deskripsi"
-                android:layout_marginTop="10dp"
-                android:visibility="visible"/>
+                <TextView
+                    android:id="@+id/deskripsi_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ini deskripsi"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:visibility="visible"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/line" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Alamat :" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ini alamat tempatnya"
+                        android:inputType="none"
+                        android:editable="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Website :"
+                        android:layout_marginTop="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ini alamat websitenya"
+                        android:inputType="none"
+                        android:editable="false" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Jam Operasional :"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="ini jam operasionalnya"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="none"
+                        android:editable="false" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@drawable/line" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Tambah Ulasan"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textAllCaps="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nama :" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ulasan Tempat :"
+                        android:layout_marginTop="5dp"/>
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rating :"
+                        android:layout_marginTop="5dp"/>
+
+                    <RatingBar
+                        android:id="@+id/rating"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:text="Tambah Ulasan"
+                        android:layout_marginRight="20dp"/>
+                </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
 </FrameLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#3abdf1</color>
+    <color name="colorPrimaryDark">#4da4d0</color>
+    <color name="colorAccent">#3abdf1</color>
+    <color name="warnaHijau" tools:keep="@color/warnaHijau">#0ab950</color>
+    <color name="aqua">#05c5ff</color>
+    <color name="colortab">#ffffff</color>
+    <color name="colorTabPrimary" tools:keep="@color/colorTabPrimary">#6ec7eb</color>
+    <!--FFC0D3D9-->
+    <!--#33a2f1-->
+</resources>

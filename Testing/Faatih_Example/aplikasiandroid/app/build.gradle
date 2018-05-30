@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.example.irakusnindi.home"
-        minSdkVersion 23
+        minSdkVersion 22
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -32,7 +32,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:2.2.2'
     implementation 'com.google.android.gms:play-services:9.6.1'
     implementation 'com.google.android.gms:play-services-maps:9.6.1'
-    compile 'com.roughike:bottom-bar:2.0'
     implementation 'com.android.support:cardview-v7:26.1.0'
 
     //Untuk API

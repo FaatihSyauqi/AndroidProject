@@ -33,7 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     WisataAdapter wisataAdapter;
     private List<Wisata> listWisata;
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    public BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -41,10 +41,12 @@ public class HomeActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     return true;
+
                 case R.id.navigation_info:
                     Intent intent1 = new Intent(HomeActivity.this,InfoActivity.class);
                     startActivity(intent1);
                     return true;
+
             }
             return false;
         }
