@@ -38,7 +38,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeActivity extends AppCompatActivity {
-    public static final String URL = "http://192.168.43.62/pariwisata/";
+    public static final String URL = "http://192.168.2.71/pariwisata/";
     private List<Belanja> listbelanja = new ArrayList<>();
     private List<Kuliner> listkuliner = new ArrayList<>();
     private List<Wisata> listwisata = new ArrayList<>();
