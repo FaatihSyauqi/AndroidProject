@@ -6,5 +6,5 @@ package com.android.pariwisata.aplikasiandroid.api;
 
 public class BaseURL {
 
-    public static final String URL = "http://192.168.1.10/pariwisata/";
+    public static final String URL = "http://192.168.1.15/pariwisata/";
 }

@@ -31,7 +31,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class KulinerFragment extends Fragment {
-    public String BASE_URL = "http://192.168.1.10/pariwisata/";
+    public String BASE_URL = "http://192.168.1.15/pariwisata/";
 
     private List<Kuliner> listkuliner = new ArrayList<>();
     RecyclerView mRecycleView;
