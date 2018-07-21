@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.pariwisata.aplikasiandroid.api.BaseURL;
 import com.android.pariwisata.aplikasiandroid.model.Belanja;
 import com.bumptech.glide.Glide;
 
@@ -46,20 +47,20 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
     public void onBindViewHolder(WisataAdapter.MyViewHolder holder, int position) {
 
         Wisata wisata = albumList.get(position);
-        holder.textViewWisata.setText(wisata.getNama_alam());
-        Glide.with(mContext).load(wisata.getFoto()).into(holder.imgViewWisata);
+        holder.textViewWisata.setText(wisata.getNamaAlam());
+        Glide.with(mContext).load(BaseURL.URL+wisata.getImg()).into(holder.imgViewWisata);
 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.textCard)
         TextView textViewWisata;
-        @BindView(R.id.img_wisata)
         ImageView imgViewWisata;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            textViewWisata = itemView.findViewById(R.id.textCard);
+            imgViewWisata = itemView.findViewById(R.id.img_alam);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

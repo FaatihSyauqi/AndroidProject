@@ -9,11 +9,11 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,11 +23,12 @@ import com.android.pariwisata.aplikasiandroid.adapter.home.KulinerAdapter;
 import com.android.pariwisata.aplikasiandroid.adapter.home.WisataAdapter;
 import com.android.pariwisata.aplikasiandroid.R;
 import com.android.pariwisata.aplikasiandroid.api.RegisterAPI;
+import com.android.pariwisata.aplikasiandroid.api.ResponseJsonAlamHome;
+import com.android.pariwisata.aplikasiandroid.api.ResponseJsonBelanjaHome;
+import com.android.pariwisata.aplikasiandroid.api.ResponseJsonKulinerHome;
 import com.android.pariwisata.aplikasiandroid.model.Belanja;
 import com.android.pariwisata.aplikasiandroid.model.Kuliner;
-import com.android.pariwisata.aplikasiandroid.model.Value;
 import com.android.pariwisata.aplikasiandroid.model.Wisata;
-import com.bumptech.glide.load.engine.Resource;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,21 +39,23 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeActivity extends AppCompatActivity {
-    public static final String URL = "http://192.168.2.71/pariwisata/";
+    public String BASE_URL = "http://192.168.1.10/pariwisata/";
+
     private List<Belanja> listbelanja = new ArrayList<>();
-    private List<Kuliner> listkuliner = new ArrayList<>();
-    private List<Wisata> listwisata = new ArrayList<>();
     private BelanjaAdapter belanjaAdapter;
-    private KulinerAdapter kulinerAdapter;
-    private WisataAdapter wisataAdapter;
-    @BindView(R.id.recycler_belanja)
     RecyclerView recyclerBelanja;
-    @BindView(R.id.recycler_kuliner)
+    private ProgressBar progressBar1;
+
+    private List<Kuliner> listkuliner = new ArrayList<>();
+    private KulinerAdapter kulinerAdapter;
     RecyclerView recyclerKuliner;
-    @BindView(R.id.recycler_alam)
+    private ProgressBar progressBar2;
+
+    private List<Wisata> listwisata = new ArrayList<>();
+    private WisataAdapter wisataAdapter;
     RecyclerView recyclerWisata;
-    @BindView(R.id.progress_bar)
-    private ProgressBar progressBar;
+    private ProgressBar progressBar3;
+
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -83,130 +86,124 @@ public class HomeActivity extends AppCompatActivity {
         navigation.setSelectedItemId(R.id.navigation_home);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
-        ButterKnife.bind(this);
-        belanjaAdapter = new BelanjaAdapter(this, listbelanja);
-        RecyclerView.LayoutManager mLayoutmanager = new LinearLayoutManager(getApplicationContext());
+        recyclerBelanja = (RecyclerView) findViewById(R.id.recycler_belanja);
+        progressBar1 = (ProgressBar)findViewById(R.id.progress_bar1);
+        RecyclerView.LayoutManager mLayoutmanager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         recyclerBelanja.setLayoutManager(mLayoutmanager);
         recyclerBelanja.setItemAnimator(new DefaultItemAnimator());
-        recyclerBelanja.setAdapter(belanjaAdapter);
         LoadDataBelanja();
 
-        ButterKnife.bind(this);
-        kulinerAdapter = new KulinerAdapter(this, listkuliner);
-        RecyclerView.LayoutManager mLayoutmanager2 = new LinearLayoutManager(getApplicationContext());
-        recyclerKuliner.setLayoutManager(mLayoutmanager2);
+        recyclerKuliner = (RecyclerView) findViewById(R.id.recycler_kuliner);
+        progressBar2 = (ProgressBar)findViewById(R.id.progress_bar2);
+        RecyclerView.LayoutManager mLayoutmanager1 = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+        recyclerKuliner.setLayoutManager(mLayoutmanager1);
         recyclerKuliner.setItemAnimator(new DefaultItemAnimator());
-        recyclerKuliner.setAdapter(kulinerAdapter);
         LoadDataKuliner();
 
-        ButterKnife.bind(this);
-        wisataAdapter = new WisataAdapter(this, listwisata);
-        RecyclerView.LayoutManager mLayoutmanager3 = new LinearLayoutManager(getApplicationContext());
-        recyclerWisata.setLayoutManager(mLayoutmanager3);
+        recyclerWisata = (RecyclerView) findViewById(R.id.recycler_alam);
+        progressBar3 = (ProgressBar)findViewById(R.id.progress_bar3);
+        RecyclerView.LayoutManager mLayoutmanager2 = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+        recyclerWisata.setLayoutManager(mLayoutmanager2);
         recyclerWisata.setItemAnimator(new DefaultItemAnimator());
-        recyclerWisata.setAdapter(wisataAdapter);
         LoadDataWisata();
+    }
+
+    private void LoadDataBelanja() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RegisterAPI api = retrofit.create(RegisterAPI.class);
+        Call<ResponseJsonBelanjaHome> call = api.view_belanja_home();
+
+        call.enqueue(new Callback<ResponseJsonBelanjaHome>() {
+            @Override
+            public void onResponse(Call<ResponseJsonBelanjaHome> call, Response<ResponseJsonBelanjaHome> response) {
+                listbelanja = response.body().getBelanja();
+                setAdapterBelanja(listbelanja);
+            }
+
+            @Override
+            public void onFailure(Call<ResponseJsonBelanjaHome> call, Throwable t) {
+                Log.e("data_error", t.getMessage().toString());
+            }
+        });
+    }
+
+    private void LoadDataKuliner() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RegisterAPI api = retrofit.create(RegisterAPI.class);
+        Call<ResponseJsonKulinerHome> call = api.view_kuliner_home();
+
+        call.enqueue(new Callback<ResponseJsonKulinerHome>() {
+            @Override
+            public void onResponse(Call<ResponseJsonKulinerHome> call, Response<ResponseJsonKulinerHome> response) {
+                listkuliner = response.body().getKuliner();
+                setAdapterKuliner(listkuliner);
+            }
+
+            @Override
+            public void onFailure(Call<ResponseJsonKulinerHome> call, Throwable t) {
+                Log.e("data_error", t.getMessage().toString());
+            }
+        });
+    }
+
+    private void LoadDataWisata() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        RegisterAPI api = retrofit.create(RegisterAPI.class);
+        Call<ResponseJsonAlamHome> call = api.view_alam_home();
+
+        call.enqueue(new Callback<ResponseJsonAlamHome>() {
+            @Override
+            public void onResponse(Call<ResponseJsonAlamHome> call, Response<ResponseJsonAlamHome> response) {
+                listwisata = response.body().getWisata();
+                setAdapterWisata(listwisata);
+            }
+
+            @Override
+            public void onFailure(Call<ResponseJsonAlamHome> call, Throwable t) {
+                Log.e("data_error", t.getMessage().toString());
+            }
+        });
+    }
+
+
+
+    public  void setAdapterBelanja(List<Belanja> listbelanja){
+        progressBar1.setVisibility(View.GONE);
+        belanjaAdapter = new BelanjaAdapter(getApplicationContext(),listbelanja);
+        recyclerBelanja.setAdapter(belanjaAdapter);
+
+    }
+
+    public  void setAdapterKuliner(List<Kuliner> listkuliner){
+        progressBar2.setVisibility(View.GONE);
+        kulinerAdapter = new KulinerAdapter(getApplicationContext(),listkuliner);
+        recyclerKuliner.setAdapter(kulinerAdapter);
+
+    }
+
+    public  void setAdapterWisata(List<Wisata> listwisata){
+        progressBar3.setVisibility(View.GONE);
+        wisataAdapter = new WisataAdapter(getApplicationContext(),listwisata);
+        recyclerWisata.setAdapter(wisataAdapter);
+
     }
 
     @Override
-    protected void onResume(){
-        super.onResume();
-        LoadDataBelanja();
-        LoadDataKuliner();
-        LoadDataWisata();
-    }
-
-    private void LoadDataBelanja(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        RegisterAPI api = retrofit.create(RegisterAPI.class);
-        Call<Value> call = api.view_belanja();
-
-        call.enqueue(new Callback<Value>(){
-            @Override
-            public void onResponse(Call<Value> call, Response<Value> response){
-                String value = response.body().getValue();
-                progressBar.setVisibility(View.GONE);
-
-                if(value.equals("1")){
-                    listbelanja =  response.body().getBelanja();
-                    belanjaAdapter = new BelanjaAdapter(HomeActivity.this,listbelanja);
-                    recyclerBelanja.setAdapter(belanjaAdapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Value> call,Throwable t){
-
-            }
-        });
-    }
-
-    private void LoadDataKuliner(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        RegisterAPI api = retrofit.create(RegisterAPI.class);
-        Call<Value> call = api.view_kuliner();
-
-        call.enqueue(new Callback<Value>(){
-            @Override
-            public void onResponse(Call<Value> call, Response<Value> response){
-                String value = response.body().getValue();
-                progressBar.setVisibility(View.GONE);
-
-                if(value.equals("1")){
-                    listkuliner =  response.body().getKuliner();
-                    kulinerAdapter = new KulinerAdapter(HomeActivity.this,listkuliner);
-                    recyclerKuliner.setAdapter(kulinerAdapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Value> call,Throwable t){
-
-            }
-        });
-    }
-
-    private void LoadDataWisata(){
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
-        RegisterAPI api = retrofit.create(RegisterAPI.class);
-        Call<Value> call = api.view_alam();
-
-        call.enqueue(new Callback<Value>(){
-            @Override
-            public void onResponse(Call<Value> call, Response<Value> response){
-                String value = response.body().getValue();
-                progressBar.setVisibility(View.GONE);
-
-                if(value.equals("1")){
-                    listwisata =  response.body().getAlam();
-                    wisataAdapter = new WisataAdapter(HomeActivity.this,listwisata);
-                    recyclerWisata.setAdapter(wisataAdapter);
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Value> call,Throwable t){
-
-            }
-        });
-    }
-
-        @Override
-        public boolean onCreateOptionsMenu (Menu menu){
+    public boolean onCreateOptionsMenu(Menu menu) {
 //        getMenuInflater().inflate(R.menu.menu_main, menu);
-            return true;
-        }
-
+        return true;
     }
+
+}

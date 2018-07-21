@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.pariwisata.aplikasiandroid.api.BaseURL;
 import com.android.pariwisata.aplikasiandroid.model.Belanja;
 import com.bumptech.glide.Glide;
 
@@ -46,20 +47,19 @@ public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.MyViewHo
     public void onBindViewHolder(KulinerAdapter.MyViewHolder holder, int position) {
 
         Kuliner kuliner = albumList.get(position);
-        holder.textViewKuliner.setText(kuliner.getNama_kuliner());
-        Glide.with(mContext).load(kuliner.getFoto()).into(holder.imgViewKuliner);
+        holder.textViewKuliner.setText(kuliner.getNamaKuliner());
+        Glide.with(mContext).load(BaseURL.URL+kuliner.getImg()).into(holder.imgViewKuliner);
 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.textCard)
         TextView textViewKuliner;
-        @BindView(R.id.img_kuliner)
         ImageView imgViewKuliner;
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            textViewKuliner = itemView.findViewById(R.id.textCard);
+            imgViewKuliner = itemView.findViewById(R.id.img_kuliner);
             ButterKnife.bind(this, itemView);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

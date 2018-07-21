@@ -1,5 +1,6 @@
 package com.android.pariwisata.aplikasiandroid.adapter.info;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -12,6 +13,8 @@ import android.widget.TextView;
 
 import com.android.pariwisata.aplikasiandroid.R;
 import com.android.pariwisata.aplikasiandroid.activity.DetailActivity;
+import com.android.pariwisata.aplikasiandroid.adapter.home.BelanjaAdapter;
+import com.android.pariwisata.aplikasiandroid.api.BaseURL;
 import com.android.pariwisata.aplikasiandroid.model.Belanja;
 import com.bumptech.glide.Glide;
 
@@ -21,51 +24,53 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import static com.google.android.gms.plus.PlusOneDummyView.TAG;
 
-public class BelanjaClickAdapter extends RecyclerView.Adapter<BelanjaClickAdapter.ViewHolder> {
-    private Context context;
-    private List<Belanja> mItems;
+public class BelanjaClickAdapter extends RecyclerView.Adapter<BelanjaClickAdapter.MyViewHolder> {
+    private Context mContext;
+    private List<Belanja> albumList;
 
-    public BelanjaClickAdapter(Context context, List<Belanja> mItems) {
-        this.context = context;
-        this.mItems = mItems;
+    public BelanjaClickAdapter(Context mContext, List<Belanja> albumList) {
+        this.mContext = mContext;
+        this.albumList = albumList;
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        View v = LayoutInflater.from(viewGroup.getContext())
-                .inflate(R.layout.grid_info, viewGroup, false);
-        return new ViewHolder(v);
+    public BelanjaClickAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.grid_info, parent, false);
+        BelanjaClickAdapter.MyViewHolder holder = new BelanjaClickAdapter.MyViewHolder(v);
+
+        return holder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        Belanja nature = mItems.get(i);
-        Glide.with(context).load(nature.getFoto()).into(viewHolder.imageView);
-        viewHolder.textView.setText(nature.getNama_belanja());
+    public void onBindViewHolder(BelanjaClickAdapter.MyViewHolder holder, int position) {
+
+        Belanja blj = albumList.get(position);
+        holder.textViewBelanja.setText(blj.getNamaBelanja());
+        Glide.with(mContext).load(BaseURL.URL+blj.getImg()).into(holder.imgViewBelanja);
+    }
+
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView textViewBelanja;
+        ImageView imgViewBelanja;
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            textViewBelanja = itemView.findViewById(R.id.textCard);
+            imgViewBelanja = itemView.findViewById(R.id.imageView);
+            ButterKnife.bind(this, itemView);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Log.d(ContentValues.TAG, "List ke " + getPosition() + " di klik.");
+                    Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                    v.getContext().startActivity(intent);
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        return mItems.size();
-    }
-
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-        @BindView(R.id.imageView)ImageView imageView;
-        @BindView(R.id.textCard)TextView textView;
-
-        public ViewHolder(View itemView) {
-            super(itemView);
-            ButterKnife.bind(this, itemView);
-            itemView.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View view) {
-//            Intent i = new Intent(context, DetailActivity.class);
-//            i.putExtra("nama_belanja",mItems.get(getPosition().nama_belanja));
-//            context.startActivity(i);
-
-        }
+        return albumList.size();
     }
 }

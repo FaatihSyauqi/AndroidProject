@@ -13,6 +13,12 @@ import android.view.MenuItem;
 import android.widget.ProgressBar;
 
 import com.android.pariwisata.aplikasiandroid.R;
+import com.android.pariwisata.aplikasiandroid.adapter.home.BelanjaAdapter;
+import com.android.pariwisata.aplikasiandroid.adapter.home.KulinerAdapter;
+import com.android.pariwisata.aplikasiandroid.adapter.home.WisataAdapter;
+import com.android.pariwisata.aplikasiandroid.adapter.info.BelanjaClickAdapter;
+import com.android.pariwisata.aplikasiandroid.adapter.info.KulinerClickAdapter;
+import com.android.pariwisata.aplikasiandroid.adapter.info.WisataClickAdapter;
 import com.android.pariwisata.aplikasiandroid.model.Belanja;
 import com.android.pariwisata.aplikasiandroid.model.Kuliner;
 import com.android.pariwisata.aplikasiandroid.model.Wisata;
@@ -25,12 +31,6 @@ import java.util.List;
 import butterknife.BindView;
 
 public class InfoActivity extends AppCompatActivity {
-    public static final String URL = "";
-    private List<Belanja> belanja = new ArrayList<>();
-    private List<Kuliner> kuliner = new ArrayList<>();
-    private List<Wisata> alam = new ArrayList<>();
-    @BindView(R.id.recyclerView) RecyclerView recyclerView;
-    @BindView(R.id.progress_bar) ProgressBar progressBar;
 
     private SlidingTabLayout mSlidingTabLayout;
     private ViewPager mViewPager;
