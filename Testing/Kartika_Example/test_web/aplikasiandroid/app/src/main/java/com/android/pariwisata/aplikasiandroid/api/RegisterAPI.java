@@ -14,4 +14,7 @@ public interface RegisterAPI {
 
     @GET("view_alam_home.php")
     Call<ResponseJsonAlamHome> view_alam_home();
+
+    @GET("view_alam.php")
+    Call<ResponJsonAlam> view_alam();
 }

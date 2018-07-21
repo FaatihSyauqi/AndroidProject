@@ -63,7 +63,11 @@ public class BelanjaAdapter extends RecyclerView.Adapter<BelanjaAdapter.MyViewHo
                 @Override
                 public void onClick(View v) {
                     Log.d(TAG, "List ke " + getPosition() + " di klik.");
+                    String textBelanja = textViewBelanja.getText().toString();
+                    String imgBelanja = imgViewBelanja.getDrawable().toString();
                     Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                    intent.putExtra("textBelanja", textBelanja);
+                    intent.putExtra("imgBelanja", imgBelanja);
                     v.getContext().startActivity(intent);
                 }
             });

@@ -108,6 +108,14 @@ public class HomeActivity extends AppCompatActivity {
         LoadDataWisata();
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        LoadDataBelanja();
+        LoadDataKuliner();
+        LoadDataWisata();
+    }
+
     private void LoadDataBelanja() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
