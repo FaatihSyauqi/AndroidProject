@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "854633500074-6cmgvn901erf8esa6l2h2mj34h94fq9h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.irakusnindi.home",
+            "certificate_hash": "95ec5b4bd1bb2f085cd7840cc81456f61a52457e"
+          }
+        },
+        {
           "client_id": "854633500074-f0m76ihd52m279i7fvc6bmftrr4cmvrf.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854633500074-f0m76ihd52m279i7fvc6bmftrr4cmvrf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
