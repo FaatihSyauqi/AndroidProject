@@ -66,7 +66,11 @@ public class WisataAdapter extends RecyclerView.Adapter<WisataAdapter.MyViewHold
                 @Override
                 public void onClick(View v) {
                     Log.d(TAG, "List ke " + getPosition() + " di klik.");
+                    String textWisata = textViewWisata.getText().toString();
+                    String imgWisata = imgViewWisata.getDrawable().toString();
                     Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                    intent.putExtra("textWisata", textWisata);
+                    intent.putExtra("imgWisata", imgWisata);
                     v.getContext().startActivity(intent);
                 }
             });

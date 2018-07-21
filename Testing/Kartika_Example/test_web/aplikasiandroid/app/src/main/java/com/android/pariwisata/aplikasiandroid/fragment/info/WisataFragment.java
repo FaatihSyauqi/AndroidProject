@@ -14,6 +14,7 @@ import android.widget.ProgressBar;
 
 import com.android.pariwisata.aplikasiandroid.adapter.info.WisataClickAdapter;
 import com.android.pariwisata.aplikasiandroid.R;
+import com.android.pariwisata.aplikasiandroid.api.BaseURL;
 import com.android.pariwisata.aplikasiandroid.api.RegisterAPI;
 import com.android.pariwisata.aplikasiandroid.api.ResponseJsonAlamHome;
 import com.android.pariwisata.aplikasiandroid.model.Wisata;
@@ -28,7 +29,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WisataFragment extends Fragment {
-    public String BASE_URL = "http://192.168.1.10/pariwisata/";
 
     private List<Wisata> listwisata = new ArrayList<>();
     RecyclerView mRecycleView;
@@ -56,7 +56,7 @@ public class WisataFragment extends Fragment {
         mRecycleView.setLayoutManager(mLayoutManager);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BaseURL.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

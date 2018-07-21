@@ -65,7 +65,11 @@ public class KulinerAdapter extends RecyclerView.Adapter<KulinerAdapter.MyViewHo
                 @Override
                 public void onClick(View v) {
                     Log.d(TAG, "List ke " + getPosition() + " di klik.");
+                    String textKuliner = textViewKuliner.getText().toString();
+                    String imgKuliner = imgViewKuliner.getDrawable().toString();
                     Intent intent = new Intent(v.getContext(), DetailActivity.class);
+                    intent.putExtra("textKuliner", textKuliner);
+                    intent.putExtra("imgKuliner", imgKuliner);
                     v.getContext().startActivity(intent);
                 }
             });

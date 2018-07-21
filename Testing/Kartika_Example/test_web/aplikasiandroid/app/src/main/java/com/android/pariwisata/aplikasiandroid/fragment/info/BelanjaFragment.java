@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import com.android.pariwisata.aplikasiandroid.adapter.home.BelanjaAdapter;
 import com.android.pariwisata.aplikasiandroid.adapter.info.BelanjaClickAdapter;
 import com.android.pariwisata.aplikasiandroid.R;
+import com.android.pariwisata.aplikasiandroid.api.BaseURL;
 import com.android.pariwisata.aplikasiandroid.api.RegisterAPI;
 import com.android.pariwisata.aplikasiandroid.api.ResponseJsonAlamHome;
 import com.android.pariwisata.aplikasiandroid.api.ResponseJsonBelanjaHome;
@@ -32,7 +33,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class BelanjaFragment extends Fragment {
-    public String BASE_URL = "http://192.168.1.10/pariwisata/";
 
     private List<Belanja> listbelanja = new ArrayList<>();
     RecyclerView mRecycleView;
@@ -60,7 +60,7 @@ public class BelanjaFragment extends Fragment {
         mRecycleView.setLayoutManager(mLayoutManager);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BaseURL.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

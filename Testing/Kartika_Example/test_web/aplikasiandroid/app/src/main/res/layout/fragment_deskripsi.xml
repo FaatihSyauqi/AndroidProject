@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/deskripsi"
+    android:layout_margin="10dp"
     tools:context="com.android.pariwisata.aplikasiandroid.fragment.Detail.DeskripsiFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -10,7 +11,7 @@
         android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:src="@drawable/bapa"
+        android:src="@drawable/kw"
         android:contentDescription="TODO" />
 
         <LinearLayout
@@ -32,10 +33,10 @@
                     android:id="@+id/deskripsi_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Ini deskripsi"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
                     android:visibility="visible"
+                    android:text="Keindahannya menyuguhkan pemandangan yang spektakuler dan lain dari yang lain. Warna air danau kawah ini pun bisa berubah-ubah. Bila cuaca sedang terik, terkadang berwarna biru kehijauan. Kadang warnanya berubah menjadi berwarna coklat susu dan lebih sering berwarna putih saat udara dipenuhi kabut tebal. Pasir dan bebatuan di kawasan danau ini juga berwarna putih, itulah sebabnya danau kawah ini disebut Kawah Putih."
                     tools:ignore="HardcodedText" />
 
                     <TextView
@@ -51,10 +52,11 @@
                         tools:ignore="HardcodedText" />
 
                     <TextView
+                        android:id="@+id/alamat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="ini alamat tempatnya"
                         android:inputType="none"
+                        android:text="Sugihmukti, Pasirjambu, Bandung, West Java"
                         tools:ignore="HardcodedText" />
 
                     <TextView
@@ -65,94 +67,110 @@
                         tools:ignore="HardcodedText" />
 
                     <TextView
+                        android:id="@+id/website"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="ini alamat websitenya"
                         android:inputType="none"
+                        android:text="www.kawahputihciwidey.com"
                         tools:ignore="HardcodedText" />
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Jam Operasional :"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        tools:ignore="HardcodedText" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="ini jam operasionalnya"
-                        android:layout_marginBottom="10dp"
-                        android:inputType="none"
-                        tools:ignore="HardcodedText" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:text="Jam Operasional :"
+                    android:layout_marginTop="10dp"
+                    tools:ignore="HardcodedText" />
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="@drawable/line" />
-
-                    <TextView
+                        android:id="@+id/jam"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Tambah Ulasan"
-                        android:layout_marginBottom="15dp"
-                        android:gravity="center"
-                        android:textColor="@color/colorPrimary"
-                        android:textAllCaps="true"
+                        android:inputType="none"
+                        android:text="07:00 - 17:00 WIB"
                         tools:ignore="HardcodedText" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Nama :"
-                        tools:ignore="HardcodedText" />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        tools:ignore="LabelFor"
-                        android:inputType="" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Ulasan Tempat :"
-                        android:layout_marginTop="5dp"
+                        android:text="Fasilitas :"
+                        android:layout_marginTop="10dp"
                         tools:ignore="HardcodedText" />
-
-                    <EditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:inputType="" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/fasilitas"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Rating :"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="10dp"
+                        android:inputType="none"
+                        android:text="Area Parkir, Mushola, Transportasi dari gerbang depan sampai dengan kawah, Pusat Informasi, Restoran dan warung makan, Toilet."
                         tools:ignore="HardcodedText" />
 
-                    <RatingBar
-                        android:id="@+id/rating"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                <!--<LinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:orientation="vertical">-->
 
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="right"
-                        android:text="Tambah Ulasan"
-                        android:layout_marginEnd="20dp"
-                        tools:ignore="HardcodedText" />
-                </LinearLayout>
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="2dp"-->
+                        <!--android:background="@drawable/line" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Tambah Ulasan"-->
+                        <!--android:layout_marginBottom="15dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:textColor="@color/colorPrimary"-->
+                        <!--android:textAllCaps="true"-->
+                        <!--tools:ignore="HardcodedText" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Nama :"-->
+                        <!--tools:ignore="HardcodedText" />-->
+
+                    <!--<EditText-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text=""-->
+                        <!--tools:ignore="LabelFor"-->
+                        <!--android:inputType="" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Ulasan Tempat :"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--tools:ignore="HardcodedText" />-->
+
+                    <!--<EditText-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text=""-->
+                        <!--android:inputType="" />-->
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Rating :"-->
+                        <!--android:layout_marginTop="5dp"-->
+                        <!--tools:ignore="HardcodedText" />-->
+
+                    <!--<RatingBar-->
+                        <!--android:id="@+id/rating"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"/>-->
+
+                    <!--<Button-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="right"-->
+                        <!--android:text="Tambah Ulasan"-->
+                        <!--android:layout_marginEnd="20dp"-->
+                        <!--tools:ignore="HardcodedText" />-->
+                <!--</LinearLayout>-->
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>

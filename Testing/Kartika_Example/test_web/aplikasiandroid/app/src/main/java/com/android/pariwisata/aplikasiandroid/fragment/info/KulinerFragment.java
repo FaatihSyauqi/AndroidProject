@@ -15,6 +15,7 @@ import android.widget.ProgressBar;
 import com.android.pariwisata.aplikasiandroid.adapter.info.BelanjaClickAdapter;
 import com.android.pariwisata.aplikasiandroid.adapter.info.KulinerClickAdapter;
 import com.android.pariwisata.aplikasiandroid.R;
+import com.android.pariwisata.aplikasiandroid.api.BaseURL;
 import com.android.pariwisata.aplikasiandroid.api.RegisterAPI;
 import com.android.pariwisata.aplikasiandroid.api.ResponseJsonBelanjaHome;
 import com.android.pariwisata.aplikasiandroid.api.ResponseJsonKulinerHome;
@@ -31,7 +32,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class KulinerFragment extends Fragment {
-    public String BASE_URL = "http://192.168.1.10/pariwisata/";
 
     private List<Kuliner> listkuliner = new ArrayList<>();
     RecyclerView mRecycleView;
@@ -59,7 +59,7 @@ public class KulinerFragment extends Fragment {
         mRecycleView.setLayoutManager(mLayoutManager);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BaseURL.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 

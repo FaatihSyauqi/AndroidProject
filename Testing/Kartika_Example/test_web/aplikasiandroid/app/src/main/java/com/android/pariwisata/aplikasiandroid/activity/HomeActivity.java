@@ -22,6 +22,7 @@ import com.android.pariwisata.aplikasiandroid.adapter.home.BelanjaAdapter;
 import com.android.pariwisata.aplikasiandroid.adapter.home.KulinerAdapter;
 import com.android.pariwisata.aplikasiandroid.adapter.home.WisataAdapter;
 import com.android.pariwisata.aplikasiandroid.R;
+import com.android.pariwisata.aplikasiandroid.api.BaseURL;
 import com.android.pariwisata.aplikasiandroid.api.RegisterAPI;
 import com.android.pariwisata.aplikasiandroid.api.ResponseJsonAlamHome;
 import com.android.pariwisata.aplikasiandroid.api.ResponseJsonBelanjaHome;
@@ -29,6 +30,8 @@ import com.android.pariwisata.aplikasiandroid.api.ResponseJsonKulinerHome;
 import com.android.pariwisata.aplikasiandroid.model.Belanja;
 import com.android.pariwisata.aplikasiandroid.model.Kuliner;
 import com.android.pariwisata.aplikasiandroid.model.Wisata;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -39,7 +42,6 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HomeActivity extends AppCompatActivity {
-    public String BASE_URL = "http://192.168.1.10/pariwisata/";
 
     private List<Belanja> listbelanja = new ArrayList<>();
     private BelanjaAdapter belanjaAdapter;
@@ -108,9 +110,18 @@ public class HomeActivity extends AppCompatActivity {
         LoadDataWisata();
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        LoadDataBelanja();
+        LoadDataKuliner();
+        LoadDataWisata();
+    }
+
     private void LoadDataBelanja() {
+
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BaseURL.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -133,7 +144,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void LoadDataKuliner() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BaseURL.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -156,7 +167,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void LoadDataWisata() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(BASE_URL)
+                .baseUrl(BaseURL.URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
