@@ -54,9 +54,9 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback{
         MapsInitializer.initialize(getContext());
 
         googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(-6.87155669, 107.57301419)).title("Marker in POLBAN"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(-7.1662039, 107.4021256)).title("Marker in Kawah Putih"));
 
-        CameraPosition POLBAN = CameraPosition.builder().target(new LatLng(-6.87155669, 107.57301419)).zoom(16).bearing(8).tilt(45).build();
+        CameraPosition POLBAN = CameraPosition.builder().target(new LatLng(-7.1662039, 107.4021256)).zoom(16).bearing(8).tilt(45).build();
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(POLBAN));
     }
 }

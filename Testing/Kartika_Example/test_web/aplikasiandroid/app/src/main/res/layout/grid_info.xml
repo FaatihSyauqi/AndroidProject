@@ -29,7 +29,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/textCard"
             android:gravity="center"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginTop="5dp"
+            android:textColor="#3abdf1"/>
 
     </android.support.v7.widget.CardView>
 

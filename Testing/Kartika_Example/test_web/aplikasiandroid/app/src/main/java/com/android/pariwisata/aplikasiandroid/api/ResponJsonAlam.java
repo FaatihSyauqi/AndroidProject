@@ -1,5 +1,6 @@
 package com.android.pariwisata.aplikasiandroid.api;
 
+import com.android.pariwisata.aplikasiandroid.model.Galery;
 import com.android.pariwisata.aplikasiandroid.model.WisataDetail;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -11,26 +12,15 @@ import java.util.List;
  */
 
 public class ResponJsonAlam {
-    @SerializedName("value")
-    @Expose
-    private Integer value;
     @SerializedName("result")
     @Expose
-    private List<WisataDetail> result = null;
+    private List<Galery> galery = null;
 
-    public Integer getValue() {
-        return value;
+    public List<Galery> getGalery() {
+        return galery;
     }
 
-    public void setValue(Integer value) {
-        this.value = value;
-    }
-
-    public List<WisataDetail> getResult() {
-        return result;
-    }
-
-    public void setResult(List<WisataDetail> result) {
-        this.result = result;
+    public void setGalery(List<Galery> galery) {
+        this.galery = galery;
     }
 }
